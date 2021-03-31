@@ -11,7 +11,16 @@ declare(strict_types=1);
  */
 use Hyperf\HttpServer\Router\Router;
 
-Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
+//Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
+Router::addRoute(['GET', 'POST', 'HEAD'], '/test', 'App\Controller\IndexController::test');
+
+//Router::get('/test', 'App\Controller\IndexController@test');
+Router::get('/echo', 'App\Controller\IndexController@echo');
+
+//多端口监听
+Router::addServer('innerHttp', function () {
+    Router::get('/', 'App\Controller\IndexController@index');
+});
 
 Router::get('/favicon.ico', function () {
     return '';

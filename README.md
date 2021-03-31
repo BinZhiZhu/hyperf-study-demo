@@ -1,3 +1,6 @@
+hyperf实践，[wiki]https://hyperf.wiki/2.1/#/zh-cn/quick-start/overview
+
+
 ## 部署问题
 
 1.安装swoole扩展
@@ -17,4 +20,16 @@ brew services restart php@7.4
 php bin/hyperf.php start
 ```
 
+## TODO 
 
+1.Inject深度使用
+2.AOP实践，可看视频：https://course.swoole-cloud.com/videos/5/new?from=hyperf.io
+
+## TODO CHECK
+
+1.依赖注入问题，不能直接注入interface，只能inject类，参考app/Controller/IndexController.php:28
+2.多端口监听路由注解不能共享，只能指定某个server，例如：@AutoController(server="innerHttp")
+
+## 注意事项
+
+1.由于项目是在swoole环境中运行的，是CLI持久化的，跟传统的fpm不同，如果代码补充了逻辑，需要restart下服务，重启。

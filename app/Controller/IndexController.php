@@ -11,8 +11,27 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\Components\CustomerService;
+use App\Interfaces\CustomerServiceInterface;
+use Hyperf\Di\Annotation\Inject;
+use Hyperf\HttpServer\Annotation\AutoController;
+
+/**
+ * Class IndexController
+ * @package App\Controller
+ * @AutoController() 默认分配路由/控制器/方法名 、可指定分配到具体的server:server="innerHttp"
+ */
 class IndexController extends AbstractController
 {
+    /**
+     * @Inject()
+     * @var CustomerService TODO CHECK 貌似不能直接注入interface，应该有一个地方做映射interface->class
+     */
+    protected $customerService;
+
+    /**
+     * @inheritDoc
+     */
     public function index()
     {
         $user = $this->request->input('user', 'Hyperf');
@@ -21,6 +40,26 @@ class IndexController extends AbstractController
         return [
             'method' => $method,
             'message' => "Hello {$user}.",
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function test()
+    {
+        return 'Test Success!';
+    }
+
+    public function getUser()
+    {
+        $userId = $this->request->input('id');
+
+        $userId = intval($userId);
+
+        return [
+            'userId'=>$userId,
+            'user'=>$this->customerService->getCustomer($userId)
         ];
     }
 }
