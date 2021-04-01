@@ -11,7 +11,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
-use App\Components\CustomerService;
+use App\Interfaces\CustomerServiceInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
 
@@ -23,7 +23,7 @@ class IndexController extends AbstractController
 {
     /**
      * @Inject
-     * @var CustomerService TODO CHECK 貌似不能直接注入interface，应该有一个地方做映射interface->class
+     * @var CustomerServiceInterface
      */
     protected $customerService;
 
