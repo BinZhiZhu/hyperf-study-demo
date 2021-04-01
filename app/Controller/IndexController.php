@@ -14,6 +14,7 @@ namespace App\Controller;
 use App\Interfaces\CustomerServiceInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
+use Swoole\Coroutine\Channel;
 
 /**
  * Class IndexController.
@@ -59,5 +60,23 @@ class IndexController extends AbstractController
             'userId' => $userId,
             'user' => $this->customerService->getCustomer($userId),
         ];
+    }
+
+
+    /**
+     * 测试协程demo
+     */
+    public function testCoroutine()
+    {
+        co(function (){
+            $channel = new Channel();
+            co(function () use ($channel){
+                $channel->push('data');
+            });
+
+            $data = $channel->pop();
+
+            var_dump($data);
+        });
     }
 }

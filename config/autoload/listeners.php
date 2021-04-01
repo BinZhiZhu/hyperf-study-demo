@@ -10,4 +10,6 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 return [
+    //可通过注解注入监听器@Listener
+//    \App\Listener\CustomerRegisterListener::class
 ];
