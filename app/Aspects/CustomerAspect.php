@@ -1,5 +1,14 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace App\Aspects;
 
 use App\Components\CustomerService;
@@ -8,33 +17,30 @@ use Hyperf\Di\Aop\AbstractAspect;
 use Hyperf\Di\Aop\ProceedingJoinPoint;
 
 /**
- * Class CustomerAspect
- * @package App\Aspects
+ * Class CustomerAspect.
  * @Aspect(
  *     classes={
- *      "App\Components\CustomerService::getCustomer",
+ *         "App\Components\CustomerService::getCustomer",
  *     }
  * )
  */
 class CustomerAspect extends AbstractAspect
 {
-
 //    // 要切入的类或 Trait，可以多个，亦可通过 :: 标识到具体的某个方法，通过 * 可以模糊匹配
 //    public $classes = [
 //        CustomerService::class,
 //        'App\Components\CustomerService::getCustomer', //尝试切入CustomerService的getCustomer方式，重写咯
-////        'App\Components\CustomerService::*Method',
+    ////        'App\Components\CustomerService::*Method',
 //    ];
 //
 //    // 要切入的注解，具体切入的还是使用了这些注解的类，仅可切入类注解和类方法注解
 //    public $annotations = [
-////        SomeAnnotation::class,
+    ////        SomeAnnotation::class,
 //    ];
 
     /**
-     * @param ProceedingJoinPoint $proceedingJoinPoint
-     * @return mixed return the value from process method of ProceedingJoinPoint, or the value that you handled
      * @throws \Hyperf\Di\Exception\Exception
+     * @return mixed return the value from process method of ProceedingJoinPoint, or the value that you handled
      */
     public function process(ProceedingJoinPoint $proceedingJoinPoint)
     {
@@ -45,8 +51,6 @@ class CustomerAspect extends AbstractAspect
         // TODO 在调用后进行某些处理
 
         //切这个类的方式，拼接一下uniqid区分咯
-        $result = $result.'_'.uniqid();
-
-        return $result;
+        return $result . '_' . uniqid();
     }
 }

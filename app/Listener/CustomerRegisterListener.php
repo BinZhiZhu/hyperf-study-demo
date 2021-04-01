@@ -1,5 +1,14 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace App\Listener;
 
 use App\Events\CustomerRegister;
@@ -9,15 +18,13 @@ use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
 
 /**
- * Class CustomerRegisterListener
- * @package App\Listener
+ * Class CustomerRegisterListener.
  * @Listener
  */
 class CustomerRegisterListener implements ListenerInterface
 {
-
     /**
-     * @Inject()
+     * @Inject
      * @var CustomerServiceInterface
      */
     protected $customerService;
@@ -28,9 +35,9 @@ class CustomerRegisterListener implements ListenerInterface
     public function listen(): array
     {
         // 返回一个该监听器要监听的事件数组，可以同时监听多个事件
-       return [
-           CustomerRegister::class
-       ];
+        return [
+            CustomerRegister::class,
+        ];
     }
 
     /**

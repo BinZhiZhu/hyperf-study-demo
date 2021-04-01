@@ -11,5 +11,5 @@ declare(strict_types=1);
  */
 return [
     //可通过注解注入监听器@Listener
-//    \App\Listener\CustomerRegisterListener::class
+    //    \App\Listener\CustomerRegisterListener::class
 ];

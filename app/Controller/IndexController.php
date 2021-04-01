@@ -62,15 +62,14 @@ class IndexController extends AbstractController
         ];
     }
 
-
     /**
-     * 测试协程demo
+     * 测试协程demo.
      */
     public function testCoroutine()
     {
-        co(function (){
+        co(function () {
             $channel = new Channel();
-            co(function () use ($channel){
+            co(function () use ($channel) {
                 $channel->push('data');
             });
 
