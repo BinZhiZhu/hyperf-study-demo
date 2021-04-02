@@ -24,6 +24,7 @@ php bin/hyperf.php start
 
 1.Inject深度使用
 2.AOP实践，可看视频：https://course.swoole-cloud.com/videos/5/new?from=hyperf.io
+3.websocket实践
 
 ## TODO CHECK
 

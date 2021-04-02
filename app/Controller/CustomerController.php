@@ -12,14 +12,17 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Events\CustomerRegister;
+use App\Middleware\Auth\CustomerMiddleware;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\Controller;
+use Hyperf\HttpServer\Annotation\Middleware;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Class CustomerController.
  * @Controller
+ * @Middleware({CustomerMiddleware::class})
  */
 class CustomerController extends AbstractController
 {
@@ -34,7 +37,7 @@ class CustomerController extends AbstractController
      */
     public function register()
     {
-        $userId = 123;
+        $userId = $this->request->input('id',123);
 
         // 这里 dispatch(object $event) 会逐个运行监听该事件的监听器
         $this->eventDispatcher->dispatch(new CustomerRegister($userId));
