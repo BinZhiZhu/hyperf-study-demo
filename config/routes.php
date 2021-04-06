@@ -25,3 +25,9 @@ Router::addServer('innerHttp', function () {
 Router::get('/favicon.ico', function () {
     return '';
 });
+
+
+//ws路由定义
+Router::addServer('ws', function () {
+    Router::get('/', 'App\Controller\WebSocketController');
+});

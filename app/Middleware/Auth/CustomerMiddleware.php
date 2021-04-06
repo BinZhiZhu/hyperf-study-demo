@@ -14,7 +14,7 @@ use Psr\Http\Server\RequestHandlerInterface;
  * Class CustomerMiddleware
  * @package App\Middleware\Auth
  */
-class CustomerMiddleware implements MiddlewareInterface
+class CustomerMiddleware
 {
     /**
      * @var ContainerInterface
