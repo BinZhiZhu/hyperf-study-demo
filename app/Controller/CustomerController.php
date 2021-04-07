@@ -15,14 +15,14 @@ use App\Events\CustomerRegister;
 use App\Middleware\Auth\CustomerMiddleware;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\Controller;
-use Hyperf\HttpServer\Annotation\Middleware;
+use Hyperf\HttpServer\Annotation\Middlewares;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Class CustomerController.
  * @Controller
- * @Middleware({CustomerMiddleware::class})
+ * @Middlewares({CustomerMiddleware::class})
  */
 class CustomerController extends AbstractController
 {
