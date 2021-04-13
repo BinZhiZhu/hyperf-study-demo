@@ -1,5 +1,5 @@
 {
-    "name": "hyperf/hyperf-skeleton",
+    "name": "hyperf/hyperf-study-demo",
     "type": "project",
     "keywords": [
         "php",
@@ -26,6 +26,7 @@
         "hyperf/grpc-client": "~2.1.0",
         "hyperf/grpc-server": "~2.1.0",
         "hyperf/guzzle": "~2.1.0",
+        "hyperf/http-message": "^2.1",
         "hyperf/http-server": "~2.1.0",
         "hyperf/logger": "~2.1.0",
         "hyperf/memory": "~2.1.0",

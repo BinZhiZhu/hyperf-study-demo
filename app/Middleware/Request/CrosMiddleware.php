@@ -1,7 +1,14 @@
 <?php
 
 declare(strict_types=1);
-
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace App\Middleware\Request;
 
 use Hyperf\Utils\Context;
@@ -12,8 +19,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 /**
- * CROS跨域中间件
- * @package App\Middleware\Request
+ * CROS跨域中间件.
  */
 class CrosMiddleware implements MiddlewareInterface
 {
@@ -24,18 +30,12 @@ class CrosMiddleware implements MiddlewareInterface
 
     /**
      * CrosMiddleware constructor.
-     * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
     }
 
-    /**
-     * @param ServerRequestInterface $request
-     * @param RequestHandlerInterface $handler
-     * @return ResponseInterface
-     */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         //header的Access-Control-Allow-Origin要放行* 、Access-Control-Allow-Credentials：true

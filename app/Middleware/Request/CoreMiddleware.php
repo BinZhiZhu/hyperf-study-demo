@@ -1,20 +1,25 @@
 <?php
 
 declare(strict_types=1);
-
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace App\Middleware\Request;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 
 /**
- * Class CoreMiddleware
- * @package App\Middleware\Request
+ * Class CoreMiddleware.
  */
 class CoreMiddleware extends \Hyperf\HttpServer\CoreMiddleware implements MiddlewareInterface
 {
     /**
-     * @param ServerRequestInterface $request
      * @return array|\Hyperf\Utils\Contracts\Arrayable|mixed|\Psr\Http\Message\ResponseInterface|string|void
      */
     protected function handleNotFound(ServerRequestInterface $request)
@@ -24,8 +29,6 @@ class CoreMiddleware extends \Hyperf\HttpServer\CoreMiddleware implements Middle
     }
 
     /**
-     * @param array $methods
-     * @param ServerRequestInterface $request
      * @return array|\Hyperf\Utils\Contracts\Arrayable|mixed|\Psr\Http\Message\ResponseInterface|string|void
      */
     protected function handleMethodNotAllowed(array $methods, ServerRequestInterface $request)

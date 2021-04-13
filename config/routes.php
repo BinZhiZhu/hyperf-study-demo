@@ -12,7 +12,9 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 
 //Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
-Router::addRoute(['GET', 'POST', 'HEAD'], '/test', 'App\Controller\IndexController::test');
+//Router::addRoute(['GET', 'POST', 'HEAD'], '/test', 'App\Controller\IndexController::test');
+
+//Router::addRoute(['GET', 'HEAD'], '/test/{id:\d+}', [\App\Controller\TestController::class, 'index']);
 
 //Router::get('/test', 'App\Controller\IndexController@test');
 Router::get('/echo', 'App\Controller\IndexController@echo');
@@ -25,7 +27,6 @@ Router::addServer('innerHttp', function () {
 Router::get('/favicon.ico', function () {
     return '';
 });
-
 
 //ws路由定义
 Router::addServer('ws', function () {

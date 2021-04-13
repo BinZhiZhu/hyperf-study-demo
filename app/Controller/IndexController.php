@@ -12,10 +12,8 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Interfaces\CustomerServiceInterface;
-use App\Middleware\Auth\CustomerMiddleware;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\AutoController;
-use Psr\Container\ContainerInterface;
 use Swoole\Coroutine\Channel;
 
 /**
@@ -42,15 +40,6 @@ class IndexController extends AbstractController
             'method' => $method,
             'message' => "Hello {$user}.",
         ];
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function test()
-    {
-        $obj = new CustomerMiddleware();
-        var_dump(method_exists($obj,'process'));
     }
 
     public function getUser()

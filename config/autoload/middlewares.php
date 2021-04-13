@@ -11,7 +11,7 @@ declare(strict_types=1);
  */
 return [
     'http' => [
-//        \App\Middleware\Auth\CustomerMiddleware::class
-      \App\Middleware\Request\CrosMiddleware::class
+        //        \App\Middleware\Auth\CustomerMiddleware::class
+        \App\Middleware\Request\CrosMiddleware::class,
     ],
 ];

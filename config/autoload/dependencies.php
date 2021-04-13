@@ -14,5 +14,5 @@ return [
 
     'InnerHttp' => Hyperf\HttpServer\Server::class,
     \App\Interfaces\CustomerServiceInterface::class => \App\Components\CustomerService::class,
-     Hyperf\HttpServer\CoreMiddleware::class => App\Middleware\Request\CoreMiddleware::class,
+    Hyperf\HttpServer\CoreMiddleware::class => App\Middleware\Request\CoreMiddleware::class,
 ];
