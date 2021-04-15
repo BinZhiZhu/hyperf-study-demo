@@ -20,6 +20,17 @@ brew services restart php@7.4
 php bin/hyperf.php start
 ```
 
+## 毒鸡汤
+
+
+重写了一次hyperf版本的毒鸡汤,访问下面的url即可
+
+```bash
+http://localhost:9501/view/index
+```
+
+注意：需要提前跑migration，导入SQL文件
+
 ## TODO 
 
 1.Inject深度使用
