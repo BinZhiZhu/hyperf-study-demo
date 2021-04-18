@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 /**
- * This file is part of Hyperf.
- *
- * @link     https://www.hyperf.io
+ * @link    https://github.com/BinZhiZhu/hyperf-study-demo
+ * @contact  binzhizhu@gmail.com
  * @document https://hyperf.wiki
- * @contact  group@hyperf.io
- * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 namespace App\Model;
 
@@ -16,8 +13,7 @@ use Hyperf\ModelCache\Cacheable;
 use Hyperf\ModelCache\CacheableInterface;
 
 /**
- * Class Model
- * @package App\Model
+ * Class Model.
  */
 abstract class Model extends BaseModel implements CacheableInterface
 {

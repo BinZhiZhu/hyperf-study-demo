@@ -1,11 +1,17 @@
 <?php
 
-use Hyperf\Database\Schema\Schema;
-use Hyperf\Database\Schema\Blueprint;
+declare(strict_types=1);
+/**
+ * @link    https://github.com/BinZhiZhu/hyperf-study-demo
+ * @contact  binzhizhu@gmail.com
+ * @document https://hyperf.wiki
+ */
 use Hyperf\Database\Migrations\Migration;
+use Hyperf\Database\Schema\Blueprint;
+use Hyperf\Database\Schema\Schema;
 
 /**
- * Class AddColumnOnSoulEntityTable
+ * Class AddColumnOnSoulEntityTable.
  */
 class AddColumnOnSoulEntityTable extends Migration
 {
