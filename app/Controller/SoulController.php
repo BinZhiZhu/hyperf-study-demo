@@ -11,6 +11,7 @@ namespace App\Controller;
 use App\Model\SoulEntity;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
+use Hyperf\View\RenderInterface;
 
 /**
  * Class SoulController.
@@ -35,6 +36,18 @@ class SoulController extends AbstractController
         return $this->response->json([
             'content' => $soulEntity->title ?? '毒鸡汤',
             'hits' => $soulEntity->hits ?? 0,
+        ]);
+    }
+
+    /**
+     * @RequestMapping(path="index",methods="get")
+     * @param RenderInterface $render
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function index(RenderInterface $render)
+    {
+        return $render->render('soul', [
+            'title' => '毒鸡汤',
         ]);
     }
 }

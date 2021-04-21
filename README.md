@@ -25,10 +25,12 @@ php bin/hyperf.php start
 体验了一下template以及ORM的使用，顺便简单重写了一次hyperf版本的毒鸡汤,访问下面的url即可  
 
 ```bash
-http://localhost:9501/view/index
+http://localhost:9501/soul/index
 ```
 
 注意：需要提前跑migration，导入SQL文件
+
+![WechatIMG1131.png](https://i.loli.net/2021/04/21/lBqC9SnhFm45iJP.png)
 
 ## ORM 
 
