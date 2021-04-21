@@ -9,7 +9,7 @@
         "microservice",
         "middleware"
     ],
-    "description": "hyperf实践项目 && 毒鸡汤实现",
+    "description": "hyperf\u5b9e\u8df5\u9879\u76ee && \u6bd2\u9e21\u6c64\u5b9e\u73b0",
     "license": "Apache-2.0",
     "require": {
         "php": ">=7.3",
@@ -42,12 +42,15 @@
         "sy-records/think-template": "^2.0"
     },
     "require-dev": {
-        "swoole/ide-helper": "^4.5",
+        "codeception/codeception": "^4.1",
+        "codeception/module-asserts": "^1.0.0",
+        "codeception/module-phpbrowser": "^1.0.0",
         "friendsofphp/php-cs-fixer": "^2.14",
+        "hyperf/devtool": "~2.1.0",
+        "hyperf/testing": "~2.1.0",
         "mockery/mockery": "^1.0",
         "phpstan/phpstan": "^0.12",
-        "hyperf/devtool": "~2.1.0",
-        "hyperf/testing": "~2.1.0"
+        "swoole/ide-helper": "^4.5"
     },
     "suggest": {
         "ext-openssl": "Required to use HTTPS.",

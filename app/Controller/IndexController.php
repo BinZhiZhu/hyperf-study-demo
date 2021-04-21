@@ -4,7 +4,6 @@ declare(strict_types=1);
 /**
  * @link    https://github.com/BinZhiZhu/hyperf-study-demo
  * @contact  binzhizhu@gmail.com
- * @document https://hyperf.wiki
  */
 namespace App\Controller;
 
@@ -30,13 +29,10 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
+        $user = $this->request->input('user', 'World');
         $method = $this->request->getMethod();
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+        return $this->response->raw("Hello {$user}.");
     }
 
     public function getUser()

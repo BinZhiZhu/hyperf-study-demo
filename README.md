@@ -36,6 +36,16 @@ http://localhost:9501/soul/index
 
 ORM基本上照搬了eloquent-ORM 参考：https://laravel.com/docs/5.0/eloquent，用法基本一致
 
+## 自动化测试
+
+引入Codeception自动化测试模块，参考tests目录 
+
+### 运行用例
+
+```bash
+php vendor/bin/codecept run --steps
+```
+
 ## TODO 
 
 1.Inject深度使用  

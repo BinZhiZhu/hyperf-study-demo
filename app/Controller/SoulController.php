@@ -4,7 +4,6 @@ declare(strict_types=1);
 /**
  * @link    https://github.com/BinZhiZhu/hyperf-study-demo
  * @contact  binzhizhu@gmail.com
- * @document https://hyperf.wiki
  */
 namespace App\Controller;
 
@@ -40,8 +39,7 @@ class SoulController extends AbstractController
     }
 
     /**
-     * @RequestMapping(path="index",methods="get")
-     * @param RenderInterface $render
+     * @RequestMapping(path="index", methods="get")
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function index(RenderInterface $render)
